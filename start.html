@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Викторина</title>
+</head>
+
+<body>
+<div class="bg">
+</div>   
+<style> body{
+    background-image: url("https://oir.mobi/uploads/posts/2021-03/1616594837_18-p-goluboi-tsvet-fon-19.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;};</style>
+
+<center><h1>Выберите викторину:</h1></center>
+    <form method="post" action="/">
+        <center><select name="quiz"></center>
+            {% for id, name in q_list %}
+                <option value="{{id}}">{{name}}</option>
+            {% endfor %}    
+        </select>
+    <center><p><input type="submit" value="Выбрать"> </p></center>
+    </form>
+</body>
+</html>

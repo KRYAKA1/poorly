@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <style> body{
+        background-image: url("https://oir.mobi/uploads/posts/2021-03/1616594837_18-p-goluboi-tsvet-fon-19.jpg");
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;};</style>
+          
+        <center><h1>Ваш результат:</h1></center>
+<div class="outer-div"><h3><center>{{ right }} правильных ответов из {{ total }}</center></h3></div>
+<center><a href="{{url_for('index')}}" class="button"> В начало </a></center>
+</body>
+
+

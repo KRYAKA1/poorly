@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Викторина</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <style> body{
+    background-image: url("https://oir.mobi/uploads/posts/2021-03/1616594837_18-p-goluboi-tsvet-fon-19.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;};</style>
+  {% if question %}
+<center><h1>{{question}}</h1></center>
+  
+  {% endif %}
+  <form method="post" action="test">
+    <input type="hidden" name="q_id" value="{{quest_id}}">
+    <div class="outer-div">
+      {% for answer in answers_list %}
+        <div class="form_radio_btn">
+          <p><center><input type="radio" name="ans_text" value="{{ answer }}">{{ answer }}</center></p>
+        </div>
+      {% endfor %}
+      <div class="inner-div">
+        <p>
+        <center><input class="btn" type="submit" value="Ответить"></center>
+        </p>
+      </div>
+    </div>
+  </form>
+
+  
